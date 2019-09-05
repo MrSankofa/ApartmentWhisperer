@@ -4,8 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node controller/server.js",
+    "dev": "nodemon controller/server.js",
+    "webpackStart": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "test": "jest --forceExit",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "travisbuild": "webpack -d"
   },
   "repository": {
     "type": "git",
@@ -18,6 +24,16 @@
     "url": "https://github.com/MrSankofa/ApartmentWhisperer/issues"
   },
   "homepage": "https://github.com/MrSankofa/ApartmentWhisperer#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "pg": "^7.12.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^5.16.0",
@@ -30,6 +46,20 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "jest": "^24.8.0",
+    "jest-puppeteer": "^4.3.0",
+    "puppeteer": "^1.18.1",
+    "redux-mock-store": "^1.5.3",
+    "supertest": "^4.0.2",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }
